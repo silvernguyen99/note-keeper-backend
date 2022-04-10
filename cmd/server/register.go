@@ -10,5 +10,8 @@ func registerService(cfg *config.Config) *services.Service {
 	db := mustConnectPostgres(cfg)
 
 	mainStore := stores.NewMainStore(db)
-	return services.New(cfg, mainStore)
+	userStore := stores.NewUserStore(db)
+	loginSocialStore := stores.NewLoginSocialStore(db)
+	noteStore := stores.NewNoteStore(db)
+	return services.New(cfg, mainStore, loginSocialStore, userStore, noteStore)
 }
