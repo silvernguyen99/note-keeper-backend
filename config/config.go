@@ -14,9 +14,9 @@ environment: D
 http_address: 9000
 
 postgres:
-  database: be_x_engine
-  host: timescaledb-postgresql
-  password: be[passwd]123
+  database: note-keeper
+  host: 127.0.0.1
+  password: password
   port: 5432
   sslmode: ~
   timeout: 15
